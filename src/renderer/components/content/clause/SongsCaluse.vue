@@ -26,6 +26,7 @@
 
 <style scoped>
   .songs-caluse {
+    display: flex;
     height: 45px;
     line-height: 45px;
     padding: 5px 10px;
@@ -37,7 +38,6 @@
   }
 
   .left, .right {
-    display: inline-block;
     width: 50%;
   }
 
