@@ -62,7 +62,7 @@
     border-radius: 50%;
     border: 1px solid rgba(20, 20, 20, 0.15);
 
-    animation: 'rotate' 50s linear infinite;
+    animation: 50s linear 0s infinite rotate;
     animation-play-state: paused;
   }
 
