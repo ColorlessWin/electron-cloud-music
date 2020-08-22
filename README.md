@@ -5,10 +5,11 @@
 > 该项目是从本人的另一个web单页面应用移植过来的，这里由于electron部分代码比较简单所以不做过多赘述，关于本项目更多的源码细节可以看这个[项目](https://github.com/ColorlessWin/cloud_music)
 
 #### 界面预览
-![home](http://121.41.231.220/statics/docs/electron-cloud-music/home.jpg)  
-![playlists](http://121.41.231.220/statics/docs/electron-cloud-music/playlists.jpg)  
-![playing](http://121.41.231.220/statics/docs/electron-cloud-music/playing.jpg)  
-![songs_detail](http://121.41.231.220/statics/docs/electron-cloud-music/songs_detail.jpg)  
-![top_list](http://121.41.231.220/statics/docs/electron-cloud-music/top_list.jpg)  
+![home](https://i.niupic.com/images/2020/08/22/8yMV.jpg)  
+![playlists](https://i.niupic.com/images/2020/08/22/8yMX.jpg)  
+![playing](https://i.niupic.com/images/2020/08/22/8yMW.jpg)  
+![songs_detail](https://i.niupic.com/images/2020/08/22/8yN0.jpg)  
+![top_list](https://i.niupic.com/images/2020/08/22/8yMU.jpg)  
 
-
+#### 支持
+- README图片外链网站 [Niupic](https://niupic.com/)
