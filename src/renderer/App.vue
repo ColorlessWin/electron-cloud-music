@@ -18,20 +18,26 @@
   export default {
     components: { CloudMusicWindow },
 
-    beforeCreate() {
+    mounted() {
       //进入时 检查登录状态并获取用户信息
 
       // return
 
-      login_status().then(result => {
-        this.$store.commit(StoreTypes.UPDATE_LOGIN_STATUS, {
-          isLogin: true,
-          profile: result.profile
-        })
+      let isLogin = window.localStorage.getItem("isLogin")
+      let profile = window.localStorage.getItem("profile")
 
+      if (!isLogin) {
+        this.$store.commit(StoreTypes.UPDATE_LOGIN_STATUS, {
+          isLogin: false,
+          profile: null
+        })
+      } else {
+        profile = JSON.parse(profile)
+        this.$store.commit(StoreTypes.UPDATE_LOGIN_STATUS, { isLogin, profile })
         this.$bus.$emit(BusTypes.USER_LOGIN)
-      })
+      }
     },
+  
 
 
     created() {

@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain } from 'electron'
+import { app, BrowserWindow, ipcMain, globalShortcut } from 'electron'
 
 /**
  * Set `__static` path to static files in production
@@ -7,6 +7,9 @@ import { app, BrowserWindow, ipcMain } from 'electron'
 if (process.env.NODE_ENV !== 'development') {
   global.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
 }
+
+
+
 
 let mainWindow
 const winURL = process.env.NODE_ENV === 'development'
@@ -30,6 +33,7 @@ function createWindow () {
 
     show: false
   })
+  
 
   mainWindow.loadURL(winURL)
 
@@ -42,6 +46,7 @@ function createWindow () {
   ipcMain.on('window-min', mainWindow.minimize.bind(mainWindow))
   ipcMain.on('window-close', mainWindow.close.bind(mainWindow))
   ipcMain.on('window-max', () => {
+    // mainWindow.webContents.openDevTools();
     if (mainWindow.isMaximized()) mainWindow.unmaximize()
     else mainWindow.maximize()
   })
@@ -50,6 +55,14 @@ function createWindow () {
     mainWindow = null
   })
 }
+
+// app.whenReady().then(() => {
+//   // 注册快捷键
+//   globalShortcut.register('Alt+CommandOrControl+I', () => {
+//     console.log('Electron loves global shortcuts!')
+//     mainWindow.webContents.openDevTools();
+//   })
+// })
 
 app.on('ready', createWindow)
 
@@ -64,6 +77,7 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
 
 /**
  * Auto Updater

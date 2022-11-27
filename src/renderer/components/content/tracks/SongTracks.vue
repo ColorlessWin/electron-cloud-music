@@ -45,15 +45,15 @@
         def_adapter: {
           index     :  (song) => song['__index'],
           name      :  (song) => song['name'],
-          artists   :  (song) => song['artists'].map((value) => {
+          artists   :  (song) => song['ar'].map((value) => {
             return {
               name: value['name'],
               id: value['id'],
               alia: value['alias']
             }
           }),
-          album_name:  (song) => song['album']['name'],
-          album_id  :  (song) => song['album']['id'],
+          album_name:  (song) => song['al']['name'],
+          album_id  :  (song) => song['al']['id'],
           duration  :  (song) => song['duration'],
           id:         (song) => song['id']
         }

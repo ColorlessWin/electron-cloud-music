@@ -1,6 +1,6 @@
 import axios from 'axios'
 import cookie from "./cookie";
-const HOST = 'http://121.41.231.220'
+const HOST = 'http://124.223.63.77'
 const PORT = 3000
 
 const instance = axios.create({

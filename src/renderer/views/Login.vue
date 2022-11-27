@@ -67,6 +67,8 @@
 
             //保存Cookie
             cookie.value = result['cookie']
+            window.localStorage.setItem("isLogin", true)
+            window.localStorage.setItem("profile", JSON.stringify(result.profile))
             this.$bus.$emit(BusTypes.USER_LOGIN)
 
             future(function () {

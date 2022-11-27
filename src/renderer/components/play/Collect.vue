@@ -36,15 +36,16 @@
     methods: {
       onClick(songsId, songsName) {
         playlist_option('add', songsId, this.id).then(result => {
+          result = result.body
           if (result.code === 200) {
             this.$notify.success({
               title: '添加成功',
-              message: `已添加到"${songsName}"`
+              message: `已添加到 "${songsName}"`
             })
           } else if (result.code === 502) {
             this.$notify.warning({
               title: '添加失败',
-              message: `"${songsName}"中已经存在该歌曲`
+              message: `"${songsName}" ${result.message}`
             })
           }
         })

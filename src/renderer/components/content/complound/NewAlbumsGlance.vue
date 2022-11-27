@@ -30,7 +30,7 @@
         return new Promise(resolve => {
           top_album(this.area, offset, limit).then(result => {
             this.total = result['total']
-            resolve(result['albums'])
+            resolve(result['monthData'].slice(0, 100))
           })
         })
       }
